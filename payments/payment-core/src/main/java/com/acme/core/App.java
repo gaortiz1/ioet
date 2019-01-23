@@ -1,7 +1,6 @@
 package com.acme.core;
 
 import com.acme.core.commons.exceptions.ParseException;
-import com.acme.core.commons.utils.InputParse;
 import com.acme.core.dtos.InputDTO;
 import com.acme.core.services.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +23,12 @@ public class App implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        if (args.length > 0) {
+        if (args.length == 0) {
             throw new ParseException("args can not be empty");
         }
 
         InputDTO inputDTO = InputDTO.parse(args[0]);
-        String message = String.format("The amount to pay %1$s is: %2$d USD", inputDTO.getName(), this.paymentService.calculate(inputDTO.getWorkDays()));
+        String message = String.format("The amount to pay %1$s is: %2$f USD", inputDTO.getName(), this.paymentService.calculate(inputDTO.getWorkDays()));
         System.out.println(message);
 
         exit(0);
