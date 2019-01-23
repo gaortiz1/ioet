@@ -1,6 +1,0 @@
-com\acme\core\domains\TestPayment.class
-com\acme\core\domains\valueObjects\TestPeriod.class
-com\acme\core\commons\utils\TestInputParse.class
-com\acme\core\domains\valueObjects\TestPeriodComposer.class
-com\acme\core\services\TestPaymentService.class
-com\acme\core\domains\valueObjects\TestHourlyWage.class
