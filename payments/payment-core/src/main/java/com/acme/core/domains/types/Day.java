@@ -27,7 +27,7 @@ public enum Day implements Serializable {
 
     public static Optional<Day> dayOf(String code) {
         return Arrays.stream(values())
-                .filter(legNo -> legNo.code.equals(code))
+                .filter(day -> day.code.equals(code))
                 .findFirst();
     }
 }
